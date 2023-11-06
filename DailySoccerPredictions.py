@@ -30,7 +30,7 @@ def makePredictions(date):
     df = df[df.columns.drop(list(df.filter(regex='Away$')))]
     df.set_index(['Date', 'Away Team', 'Home Team'], inplace=True)
     
-    model = load_model('SoccerPredictor.h5')
+    model = load_model('SoccerPredictor.keras')
 
     predictions = pd.DataFrame(data=model.predict(df), columns=['Away Win', 'Draw', 'Home Win'])
 

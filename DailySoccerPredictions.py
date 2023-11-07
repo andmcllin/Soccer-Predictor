@@ -32,7 +32,10 @@ def makePredictions(date):
     
     model = load_model('SoccerPredictor.keras')
 
-    predictions = pd.DataFrame(data=model.predict(df), columns=['Away Win', 'Draw', 'Home Win'])
+    try:
+        predictions = pd.DataFrame(data=model.predict(df), columns=['Away Win', 'Draw', 'Home Win'])
+    except:
+        raise Exception('No Games Today.')
 
     del model
 

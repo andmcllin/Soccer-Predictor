@@ -21,7 +21,10 @@ def getPastScheduleAndScores(year):
     tablestring = 'sched_{}-{}_9_1'
     modtablestring = tablestring.format(first_year, year)
     table = soup.find('table', attrs={'id': modtablestring})
-    prem_scores_df = pd.read_html(StringIO(str(table)))[0]
+    try:
+        prem_scores_df = pd.read_html(StringIO(str(table)))[0]
+    except:
+        pass
 
     del base_url, req_url, data, soup, tablestring, modtablestring, table
 
@@ -38,7 +41,10 @@ def getPastScheduleAndScores(year):
     tablestring = 'sched_{}-{}_12_1'
     modtablestring = tablestring.format(first_year, year)
     table = soup.find('table', attrs={'id': modtablestring})
-    liga_scores_df = pd.read_html(StringIO(str(table)))[0]
+    try:
+        liga_scores_df = pd.read_html(StringIO(str(table)))[0]
+    except:
+        pass
 
     del base_url, req_url, data, soup, tablestring, modtablestring, table
 
@@ -55,7 +61,10 @@ def getPastScheduleAndScores(year):
     tablestring = 'sched_{}-{}_11_1'
     modtablestring = tablestring.format(first_year, year)
     table = soup.find('table', attrs={'id': modtablestring})
-    serie_scores_df = pd.read_html(StringIO(str(table)))[0]
+    try:
+        serie_scores_df = pd.read_html(StringIO(str(table)))[0]
+    except:
+        pass
 
     del base_url, req_url, data, soup, tablestring, modtablestring, table
 
@@ -72,7 +81,10 @@ def getPastScheduleAndScores(year):
     tablestring = 'sched_{}-{}_20_1'
     modtablestring = tablestring.format(first_year, year)
     table = soup.find('table', attrs={'id': modtablestring})
-    bund_scores_df = pd.read_html(StringIO(str(table)))[0]
+    try:
+        bund_scores_df = pd.read_html(StringIO(str(table)))[0]
+    except:
+        pass
 
     del base_url, req_url, data, soup, tablestring, modtablestring, table
 

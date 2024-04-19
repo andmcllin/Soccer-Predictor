@@ -15,7 +15,7 @@ def getTeamStats(year):
     table = soup.find('table', attrs={'id': 'stats_squads_standard_for'})
     for_df = pd.read_html(StringIO(str(table)))[0]
 
-    del base_url, req_url, data, soup, table
+    del base_url, req_url, soup, table
 
     for_df = for_df.sort_index(axis=1).drop(columns=['Playing Time', 'Performance', 'Expected'])
 
@@ -29,15 +29,11 @@ def getTeamStats(year):
 
     time.sleep(3)
 
-    base_url = 'https://fbref.com/en/comps/9/{}-{}/{}-{}-Premier-League-Stats'
-    req_url = base_url.format(first_year, year, first_year, year)
-    data = requests.get(req_url)
-
     soup = BeautifulSoup(data.content, 'html.parser')
     table = soup.find('table', attrs={'id': 'stats_squads_standard_against'})
     against_df = pd.read_html(StringIO(str(table)))[0]
 
-    del base_url, req_url, data, soup, table
+    del data, soup, table
 
     against_df = against_df.sort_index(axis=1).drop(columns=['Playing Time', 'Performance', 'Expected'])
 
@@ -70,7 +66,7 @@ def getTeamStats(year):
     table = soup.find('table', attrs={'id': 'stats_squads_standard_for'})
     for_df = pd.read_html(StringIO(str(table)))[0]
 
-    del base_url, req_url, data, soup, table
+    del base_url, req_url, soup, table
 
     for_df = for_df.sort_index(axis=1).drop(columns=['Playing Time', 'Performance', 'Expected'])
 
@@ -84,15 +80,11 @@ def getTeamStats(year):
 
     time.sleep(3)
 
-    base_url = 'https://fbref.com/en/comps/12/{}-{}/stats/{}-{}-La-Liga-Stats'
-    req_url = base_url.format(first_year, year, first_year, year)
-    data = requests.get(req_url)
-
     soup = BeautifulSoup(data.content, 'html.parser')
     table = soup.find('table', attrs={'id': 'stats_squads_standard_against'})
     against_df = pd.read_html(StringIO(str(table)))[0]
 
-    del base_url, req_url, data, soup, table
+    del data, soup, table
 
     against_df = against_df.sort_index(axis=1).drop(columns=['Playing Time', 'Performance', 'Expected'])
 
@@ -125,7 +117,7 @@ def getTeamStats(year):
     table = soup.find('table', attrs={'id': 'stats_squads_standard_for'})
     for_df = pd.read_html(StringIO(str(table)))[0]
 
-    del base_url, req_url, data, soup, table
+    del base_url, req_url, soup, table
 
     for_df = for_df.sort_index(axis=1).drop(columns=['Playing Time', 'Performance', 'Expected'])
 
@@ -139,15 +131,11 @@ def getTeamStats(year):
 
     time.sleep(3)
 
-    base_url = 'https://fbref.com/en/comps/11/{}-{}/stats/{}-{}-Serie-A-Stats'
-    req_url = base_url.format(first_year, year, first_year, year)
-    data = requests.get(req_url)
-
     soup = BeautifulSoup(data.content, 'html.parser')
     table = soup.find('table', attrs={'id': 'stats_squads_standard_against'})
     against_df = pd.read_html(StringIO(str(table)))[0]
 
-    del base_url, req_url, data, soup, table
+    del data, soup, table
 
     against_df = against_df.sort_index(axis=1).drop(columns=['Playing Time', 'Performance', 'Expected'])
 
@@ -180,7 +168,7 @@ def getTeamStats(year):
     table = soup.find('table', attrs={'id': 'stats_squads_standard_for'})
     for_df = pd.read_html(StringIO(str(table)))[0]
 
-    del base_url, req_url, data, soup, table
+    del base_url, req_url, soup, table
 
     for_df = for_df.sort_index(axis=1).drop(columns=['Playing Time', 'Performance', 'Expected'])
 
@@ -194,15 +182,11 @@ def getTeamStats(year):
 
     time.sleep(3)
 
-    base_url = 'https://fbref.com/en/comps/20/{}-{}/stats/{}-{}-Bundesliga-Stats'
-    req_url = base_url.format(first_year, year, first_year, year)
-    data = requests.get(req_url)
-
     soup = BeautifulSoup(data.content, 'html.parser')
     table = soup.find('table', attrs={'id': 'stats_squads_standard_against'})
     against_df = pd.read_html(StringIO(str(table)))[0]
 
-    del base_url, req_url, data, soup, table
+    del data, soup, table
 
     against_df = against_df.sort_index(axis=1).drop(columns=['Playing Time', 'Performance', 'Expected'])
 

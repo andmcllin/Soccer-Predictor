@@ -94,7 +94,6 @@ def getPastScheduleAndScores(year):
     bund_scores_df['Result'] = (bund_scores_df['Home Goals'].astype(int) - bund_scores_df['Away Goals'].astype(int)).apply(win)
     bund_scores_df = bund_scores_df[['Date', 'Home', 'Away', 'Result']]
 
-
     scores_df = pd.concat([prem_scores_df, liga_scores_df, serie_scores_df, bund_scores_df], axis=0)
 
     del prem_scores_df, liga_scores_df, serie_scores_df, bund_scores_df
